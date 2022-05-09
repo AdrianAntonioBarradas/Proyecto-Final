@@ -1,0 +1,10 @@
+.container {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(237, 237, 218) !important;
+    border: solid rgba(144, 148, 198, 0.783) !important; 
+}
+
+.navbar {
+    padding: 0 !important;
+}

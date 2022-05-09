@@ -1,16 +1,30 @@
 .container{
     padding: 3%;
-    background-color: antiquewhite;
-    border: solid rgb(151, 27, 27);
+    background-color: rgba(212, 212, 212, 0.842);
+    border: solid #3756df;
+    text-align: left;
+}
+
+.error-input, .correct-input{
+    transition:all .8s ease-in-out;
 }
 
 .error-input {
-    border: solid red;
+    border: solid red !important;
    
 }
 
 .correct-input {
-    border: 5px solid green                            ;
+    border:  solid green !important;
+}
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #2662bd !important;
+    border-color: #edf035 !important;
+}
+.center{
+    text-align: right;
 }
 
 h1{
@@ -19,8 +33,8 @@ h1{
 }
 
 body{
-    padding: 10%;
+    /* padding: 5%; */
     background-image: url("./img-general/logo.png");
-    background-size: cover ;
-    background-repeat: no-repeat;
+    /* background-size: cover ;
+    background-repeat: no-repeat; */
 }
