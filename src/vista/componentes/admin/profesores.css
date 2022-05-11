@@ -1,0 +1,16 @@
+.content{
+    padding: 2%;
+}
+
+.row-prof {
+    padding: 1%;
+    margin: 2%;
+    min-height: 25vh;
+    border: solid black;
+    
+}
+
+.col-prof {
+    border: solid rgb(179, 14, 14);
+    box-shadow: 5px 10px ;
+}

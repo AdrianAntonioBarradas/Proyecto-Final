@@ -9,21 +9,22 @@ export default function Header() {
     
        <header>
         <p><span className="title-header">Escuela Nacional Preparatoria</span></p>
+        
       </header>
       <div className="container-fluid"> 
 
-      <Navbar collapseOnSelect expand="md" bg="lg" variant="light">
-        <Container >
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar collapseOnSelect expand="sm" bg="lg" variant="light" className=' bg-light'>
+        <Container fluid>
+        <Navbar.Brand href="#home">ENP</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink className="nav-link" to="/profesores">profesores</NavLink>
+            <NavLink className="nav-link" to="/profesores">Profesores</NavLink>
             <NavLink className="nav-link" to="/alumnos">Alumnos</NavLink>
             <NavLink className="nav-link" to="/materias">Materias</NavLink>
           </Nav>
         </Navbar.Collapse>
-        <Button>Cerrar sesión</Button>
+        <Button className='close-btn'>Cerrar sesión</Button>
         </Container>
       </Navbar>
       
@@ -45,7 +46,7 @@ export default function Header() {
 
 
 
-
+{/* 
 <nav className="navbar navbar-expand-md navbar-light bg-light">
               <a className="navbar-brand" href="#">Escuela</a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +66,7 @@ export default function Header() {
               </ul>
             </div>
             <a className="btn btn-outline-primary" href="#">Cerrar sesión</a>
-          </nav>
+          </nav> */}
 
 
 
