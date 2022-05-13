@@ -32,7 +32,10 @@ function App() {
           {/* <Route path="/login" element={<Login />}/>
           <Route path="/admin_:userId" element={<Header/>}/> */}
           <Route path="/" element={"inicio"}/>
-          <Route path="/profesores" element={<Profesores /> } />
+          <Route path="/profesores/" element={<Profesores /> }>
+            <Route path="/prueba" element={"opcion selected" } />
+          
+          </Route>
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
