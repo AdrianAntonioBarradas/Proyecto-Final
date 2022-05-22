@@ -1,12 +1,12 @@
-import { NavLink } from 'react-router-dom';
-import './option.css';
+import { NavLink } from "react-router-dom";
+import "./option.css";
 
 export default function Option(props) {
-    return (
-      <NavLink className="nav-link" to="/prueba">
-        <div className="option-container col-md-4">
-        jesucristo
-        </div>
+  return (
+    <div className="col-md-4 col-prof ">
+      <NavLink className="option-container nav " to="prueba">
+        {props.name}
       </NavLink>
-      );
-    }
+    </div>
+  );
+}
