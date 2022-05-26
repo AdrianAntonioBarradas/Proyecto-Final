@@ -21,3 +21,8 @@
   /* border: solid rgb(179, 14, 14); */
   box-shadow: 4px 7px #33323291;
 }
+
+.nav:hover {
+  background-color: #fceb56;
+  font-size: 30px;
+}
