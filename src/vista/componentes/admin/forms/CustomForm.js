@@ -15,25 +15,33 @@ export default function CustomForm() {
       
     }
 
-    return (
-      <div className="container-form">
-        <h1>Iniciar sesión</h1>
-        <form onSubmit={handleSubmit} className="form-group">
-        
-            <input type ="text" name ="nombre" id="nombre" placeholder="Ingrese nombre"/>
-            <h4>Alta Alumno</h4>
-            <input className="controls" type ="text" name ="nombre" id="nombre" placeholder="Ingrese nombre"/>
-            <input className="controls" type ="text" name ="apellidomat" id="apellidopat" placeholder="Ingrese apellido paterno"/>
-            <input className="controls" type ="text" name ="apellidomat" id="apellidomat" placeholder="Ingrese apellido materno"/>
-            <input className="controls" type ="text" name ="cuenta" id="cuenta" placeholder="Ingrese numero de cuenta"/>
-            <input className="controls" type ="text" name ="curp" id="curp" placeholder="Ingrese el CURP"/>
-            <h2>Genero</h2>
-            <input name="cbilibros" type="checkbox" />
-            <input name="cbilibros" type="checkbox" />
-            <h2>Fecha de nacimiento</h2>
-            <input className ="date" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2022-12-31"/>
-            <input className="botons" type ="submit" value ="Registrar" />
-        </form>
-      </div>
-    )
-  }
+  return (
+    <div className="container-form">
+      <h1>Iniciar sesión</h1>
+
+      <form method="post" action="<?=site_url('/guardar')?>" enctype="multipart/form-data">
+        <label>Nombre:</label><br/>
+        <input id="nombre" name="nombre" type="text" /><br/>
+        <label>Apellido Paterno:</label><br/>
+        <input id="apellido_p" name="apellido_p" type="text" /><br/>
+        <label>Apellido Materno:</label><br/>
+        <input id="apellido_m" name="apellido_m" type="text" /><br/>
+        <label>Curp:</label><br/>
+        <input id="curp" name="curp" type="text" /><br/>
+        <label>Fecha Nacimiento:</label><br/>
+        <input id="fecha_nac" name="fecha_nac" type="date" /><br/>
+        <label>Genero:</label><br/>
+        <select id="genero" name="genero">
+            <option value="MASCULINO">MASCULINO</option>
+            <option value="FEMENINO ">FEMENINO</option>
+        </select><br/>
+        <label>Fecha Actualización:</label><br/>
+        <input id="fecha_actualizacion" name="fecha_actualizacion" type="date" /><br/>
+        <label>Estado:</label><br/>
+        <input id="estado" name="estado" type="text" /><br/>
+        <button type="submit">Guardar </button>
+      </form>
+      
+  </div>
+  )
+}
