@@ -28,31 +28,14 @@ function App() {
   const userId = state.id;
 
   return (
-    <>
-      <div className="App">
-        <Router>
-          {state.view ? <div> se pudo</div> : <div> no se puedo</div>}
-          <Prueba />
-          <Prueba2 />
-
-          <Header />
-          {/* <Login />  */}
-          {/* {userId == null ? navigate(/login) :navigate(/admin)} */}
-          <Routes>
-            {/* <Route path="/login" element={<Login />}/>
-            <Route path="/admin_:userId" element={<Header/>}/> */}
-            <Route path="login" element={<Login />} />
-            <Route path="/" element={"inicio"} />
-            <Route path="profesores" element={<Profesores />}>
-              <Route path="prueba" element={<Login />} />
-            </Route>
-            <Route path="profesores/registro" element={"esto es una prueba"} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Router>
-      </div>
-    </>
-  );
+     state ? ({
+        0: <ManageAdmin />,
+        1: "es uno",
+        2: "es dos",
+        null: <Login />
+      }[state.role])
+      
+      : (<Login /> ));
 }
 
 export default App;
