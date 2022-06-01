@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import   "../login/script.js"
 import "./login.css"
+import { Context } from "./Store.js";
 
-import "../login/Siuu.wav";
 
 
 export default function Login() {
+  const [state, setState]=useContext(Context);
     // const navigate = useNavigate();
     const [id, setName] = useState("");
     const [pass, setPass] = useState("");
+    const [role, setRole] = useState("");
     
+  
     
     const handleSubmit = (event) => {
     try {
@@ -17,6 +20,7 @@ export default function Login() {
         // name== ? 
         var inputAccount = document.getElementById("account");
         var inputPass = document.getElementById("password");
+        var inputrole= document.getElementById("roleinput");
         if (id === "") { 
           inputAccount.classList.remove("correct-input");
           inputAccount.classList.add("error-input");
@@ -33,11 +37,22 @@ export default function Login() {
           inputPass.classList.remove("error-input");
         }
 
-        if (pass !=="" && id!="" ){
+        if (role === "") { 
+          inputrole.classList.remove("correct-input");
+          inputrole.classList.add("error-input");
+        } else {
+          inputrole.classList.add("correct-input");
+          inputrole.classList.remove("error-input");
+        }
+
+
+
+        if (pass !=="" && id!=="" && role!==""){
           
           
           console.log(pass+" sdfsdf  "+id);
-          // alert(`The id you entered was: ${id} sith la contra: ${pass}`);
+          setState({ id: id, role: role });
+          alert(`The id you entered was: ${id} sith la contra: ${pass}`);
           // navigate("/admin");
         }
         
@@ -47,10 +62,7 @@ export default function Login() {
       
     }
 
-    var audio = new Audio("Siuu.wav");
-    document.onclick = function() {
-      audio.play();
-    }
+   
 
     
 
@@ -71,28 +83,18 @@ export default function Login() {
           <div className="center">
           {/* aquí la parte prueba de los control btn */}
         
-        <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                      <label className="input-group-text" htmlFor="inputGroupSelect01">Rol:</label>
-                    </div>
-                    <select className="custom-select" id="inputGroupSelect01">
-                      <option  >...</option>
-                      <option value={3}>Alumno</option>
-                      <option value={2}>Profesor</option>
-                      <option value={1}>Admin</option>
-                    </select>
-                  </div>
-        
-          
-          
-
-
-
-
-
-
-          {/* fin prueba de controls */}
-            <input className="btn btn-primary " type="submit" value="Ingresar"/>
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <label className="input-group-text" htmlFor="inputGroupSelect01">Rol:</label>
+            </div>
+            <select className="custom-select" id="roleinput" value={role} onChange={(e) => setRole(e.target.value)}>
+              <option  >...</option>
+              <option value={2}>Alumno</option>
+              <option value={1}>Profesor</option>
+              <option value={0}>Admin</option>
+            </select>
+          </div>
+            <input className="btn btn-primary btn-lg" type="submit" value="Ingresar"/>
           </div>
         </form>
       </div>

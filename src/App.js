@@ -28,7 +28,7 @@ function App() {
   const userId = state.id;
 
   return (
-     state ? ({
+     state.id ? ({
         0: <ManageAdmin />,
         1: "es uno",
         2: "es dos",

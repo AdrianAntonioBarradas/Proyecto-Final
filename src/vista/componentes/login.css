@@ -1,8 +1,11 @@
 .container{
     padding: 3%;
-    background-color: rgba(212, 212, 212, 0.842);
-    border: solid #3756df;
+    background-color: rgba(253, 248, 185, 0.948) !important;
+    border: solid #3756df !important;
     text-align: left;
+    margin: auto !important;
+    margin-top: 250px !important;
+    max-width: 600px !important;
 }
 
 .error-input, .correct-input{

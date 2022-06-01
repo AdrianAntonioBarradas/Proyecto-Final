@@ -10,7 +10,7 @@ import React, { useState } from "react";
 const initialState = {
   id: 420093774,
   role: 0,
-  view: true
+  view: false
 };
 
 export const Context = React.createContext();

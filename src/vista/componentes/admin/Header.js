@@ -15,17 +15,22 @@ import React, { useContext } from "react";
 import { Context } from "../Store";
 
 function Header() {
-  const [state] = useContext(Context);
+  const [state, setState] = useContext(Context);
+
+  const logout=() =>{
+    setState({ id: null, role:null });
+  };
   return (
     <>
       <div>
+      
         <header>
           <p>
             <span className="title-header">Escuela Nacional Preparatoria</span>
           </p>
         </header>
         <div className="container-fluid">
-          {state.view ? (
+          {1 ? (
             <>
               {" "}
               <Navbar
@@ -33,10 +38,10 @@ function Header() {
                 expand="sm"
                 bg="lg"
                 variant="light"
-                className=" bg-light"
+                className=" bg-light navbar"
               >
                 <Container fluid>
-                  <Navbar.Brand href="/">ENP</Navbar.Brand>
+                  <NavLink className="nav-link" to="/">ENP</NavLink>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -51,9 +56,9 @@ function Header() {
                       </NavLink>
                     </Nav>
                   </Navbar.Collapse>
-                  <Button className="close-btn">Cerrar sesión</Button>
+                  <Button className="close-btn btn-lg" onClick={logout}>Cerrar sesión</Button>
                 </Container>
-              </Navbar>{" "}
+              </Navbar>
             </>
           ) : (
             false

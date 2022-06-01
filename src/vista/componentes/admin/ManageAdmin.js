@@ -11,6 +11,8 @@ import Profesores from "./Profesores";
 import NotFoundPage from "../NotFoundPage";
 import { useContext } from "react";
 import { Context } from "../Store";
+import CustomForm from "./forms/CustomForm";
+// form components
 
 
 
@@ -21,8 +23,6 @@ export default function ManageAdmin(){
     <>
       <div className="App">
         <Router>
-          
-          
 
           <Header />
           {/* <Login />  */}
@@ -33,11 +33,14 @@ export default function ManageAdmin(){
             <Route path="login" element={<Login />} />
             <Route path="/" element={"inicio"} />
             <Route path="profesores" element={<Profesores />}>
-              <Route path="prueba" element={<Login />} />
+              {/* <Route path="prueba" element={<CustomForm/>} /> */}
+                
             </Route>
-            <Route path="profesores/registro" element={"esto es una prueba"} />
+            <Route path="examp" element={<CustomForm/>} />
+            
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          <Footer />
         </Router>
       </div>
     </>

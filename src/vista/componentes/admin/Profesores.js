@@ -2,7 +2,7 @@ import Option from "./Option";
 import "./profesores.css";
 
 export default function Profesores() {
-  return (
+  return ( 1? 
     <div className="container-fluid content">
       <div className="row row-prof">
         <Option name="Asignar profesor" />
@@ -14,6 +14,11 @@ export default function Profesores() {
         <Option name="Editar profesor" />
         <Option name="Editar profesor" />
       </div>
-    </div>
+      <div className="row row-prof">
+        <Option name="Editar profesor" />
+        <Option name="Editar profesor" />
+        <Option name="Editar profesor" />
+      </div>
+    </div> : false
   );
 }
