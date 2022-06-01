@@ -40,7 +40,7 @@ export default function ManageAdmin(){
             
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </div>
     </>
