@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Context } from "../Store";
 import "./option.css";
 
 export default function Option(props) {
+  const [state, setState]=useContext(Context);
   function popUp(URL) {
     window.open(
       URL,
@@ -10,9 +13,13 @@ export default function Option(props) {
     );
   }
 
+  const view =()=>{
+    setState({ id: state.id, role: state.role, view: false })
+  };
+
   return (
     <div className="col-md-4 col-prof ">
-      <NavLink className="option-container nav " to="prueba">
+      <NavLink className="option-container nav " to={props.url} onClick={view}>
         {props.name}
       </NavLink>
     </div>

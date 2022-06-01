@@ -33,14 +33,14 @@ export default function ManageAdmin(){
             <Route path="login" element={<Login />} />
             <Route path="/" element={"inicio"} />
             <Route path="profesores" element={<Profesores />}>
-              {/* <Route path="prueba" element={<CustomForm/>} /> */}
+              <Route path="customform" element={ <CustomForm/> }  />
                 
             </Route>
-            <Route path="examp" element={<CustomForm/>} />
+            <Route path="customform" element={<CustomForm/>} />
             
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
       </div>
     </>

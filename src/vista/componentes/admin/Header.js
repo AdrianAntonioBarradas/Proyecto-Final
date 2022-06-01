@@ -18,7 +18,11 @@ function Header() {
   const [state, setState] = useContext(Context);
 
   const logout=() =>{
-    setState({ id: null, role:null });
+    setState({ id: null, role:null, view: true });
+  };
+
+  const setView =()=>{
+    setState({ id: state.id , role: state.role, view: true });
   };
   return (
     <>
@@ -45,7 +49,7 @@ function Header() {
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                      <NavLink className="nav-link" to="/profesores">
+                      <NavLink className="nav-link" to="/profesores" onClick={setView}>
                         Profesores
                       </NavLink>
                       <NavLink className="nav-link" to="/alumnos">
