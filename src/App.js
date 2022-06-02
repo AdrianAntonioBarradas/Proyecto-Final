@@ -29,9 +29,9 @@ function App() {
 
   return (
      state.id ? ({
-        0: <ManageAdmin />,
-        1: "es uno",
-        2: "es dos",
+        1: <ManageAdmin />,
+        2: "es uno",
+        3: "es dos",
         null: <Login />
       }[state.role])
       

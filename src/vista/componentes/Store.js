@@ -8,9 +8,9 @@ import React, { useState } from "react";
 
 //prueba
 const initialState = {
-  id: 420093774,
-  role: 0,
-  view: false
+  id: null,
+  role: null,
+  view: true
 };
 
 export const Context = React.createContext();
