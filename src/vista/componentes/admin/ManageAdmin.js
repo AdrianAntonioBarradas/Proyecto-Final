@@ -13,6 +13,10 @@ import { useContext } from "react";
 import { Context } from "../Store";
 import CustomForm from "./forms/CustomForm";
 // form components
+import BajaProf from "./forms/BajaProf";
+import ModificarProf from "./forms/ModificarProf";
+import ModificarProfM from "./forms/ModificarProfM";
+import AsignarProfM from "./forms/AsignarProfM";
 
 
 
@@ -34,7 +38,10 @@ export default function ManageAdmin(){
             <Route path="/" element={"inicio"} />
             <Route path="profesores" element={<Profesores />}>
               <Route path="customform" element={ <CustomForm/> }  />
-                
+              <Route path="bajaprof" element={<BajaProf />} />
+              <Route path="modificarprof" element={<ModificarProf />} />
+              <Route path="modificarprofm" element={<ModificarProfM />} />
+              <Route path="asignarprofm" element={<AsignarProfM />} />  
             </Route>
             <Route path="customform" element={<CustomForm/>} />
             

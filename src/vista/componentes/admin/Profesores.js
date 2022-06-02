@@ -9,8 +9,10 @@ export default function Profesores() {
   return ( state.view ? (<div className="container-fluid content">
       <div className="row row-prof">
         <Option name="Asignar profesor" url="customform" />
-        <Option name="Borrar profesor" url="customform" />
-        <Option name="Editar profesor" url="customform" />
+        <Option name="Borrar profesor" url="bajaprof" />
+        <Option name="Editar profesor" url="modificarprof" />
+        <Option name="Cambiar de materia" url="modificarprofm" />
+        <Option name="Asignar materia" url="asignarprofm" />
       </div>
       {/* <div className="row row-prof">
         <Option name="Editar profesor" />

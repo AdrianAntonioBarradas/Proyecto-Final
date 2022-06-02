@@ -18,7 +18,7 @@ export default function CustomForm() {
 
   return (
     <div className="container-form">
-      <h1>Iniciar sesión</h1>
+      <h1>Alta profesor</h1>
 
       <form method="post" action="<?=site_url('/guardar')?>" encType="multipart/form-data">
         <label>Nombre:</label><br/>
@@ -40,6 +40,7 @@ export default function CustomForm() {
         <input id="fecha_actualizacion" name="fecha_actualizacion" type="date" /><br/>
         <label>Estado:</label><br/>
         <input id="estado" name="estado" type="text" /><br/>
+        <br/>
         <ButtonForm />
       </form>
       
