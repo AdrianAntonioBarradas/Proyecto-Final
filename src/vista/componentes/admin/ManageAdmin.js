@@ -18,6 +18,12 @@ import BajaProf from "./forms/BajaProf";
 import ModificarProf from "./forms/ModificarProf";
 import ModificarProfM from "./forms/ModificarProfM";
 import AsignarProfM from "./forms/AsignarProfM";
+import Alumnos from "./Alumnos";
+import AltaAlum from  "./forms/AltaAlum";
+import AsignarAlumG from "./forms/AsignarAlumG";
+import BajaAlum from "./forms/BajaAlum";
+import CambiarAlumG from "./forms/CambiarAlumG";
+import ModificarAlum from "./forms/ModificarAlum";
 
 
 
@@ -43,6 +49,14 @@ export default function ManageAdmin(){
               <Route path="modificarprof" element={<ModificarProf />} />
               <Route path="modificarprofm" element={<ModificarProfM />} />
               <Route path="asignarprofm" element={<AsignarProfM />} />  
+            </Route>
+            <Route path="alumnos" element={<Alumnos />}>
+              <Route path="altalumno" element={ <AltaAlum /> }  />
+              <Route path="asignaralumg" element={<AsignarAlumG />} />
+              <Route path="bajaalum" element={<BajaAlum />} />
+              <Route path="cambiarclumg" element={<CambiarAlumG/>} />
+              <Route path="asignarprofm" element={<AsignarProfM />} />  
+              <Route path="modificaralum" element={<ModificarAlum />} />
             </Route>
             <Route path="customform" element={<CustomForm/>} />
             

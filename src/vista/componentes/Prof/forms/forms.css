@@ -1,0 +1,12 @@
+.container-form {
+  padding: 3%;
+  background-color: rgba(184, 236, 243, 0.948) !important;
+  border: solid #c0e9f0 !important;
+  text-align: left;
+  margin: auto !important;
+  margin-top: 50px !important;
+  max-width: 600px !important;
+  box-shadow: 7px 13px 37px #000;
+  font-family: "Times new roman";
+  font-size: 22px;
+}
