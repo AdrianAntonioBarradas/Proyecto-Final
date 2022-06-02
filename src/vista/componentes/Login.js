@@ -11,51 +11,68 @@ export default function Login() {
   const [json, setJson] = useState(null);
   const [state, setState]=useContext(Context);
     // const navigate = useNavigate();
-    const [id, setName] = useState("");
-    const [pass, setPass] = useState("");
-    const [role, setRole] = useState("");
+  const [id, setName] = useState("administra");
+  const [pass, setPass] = useState("123");
+  const [role, setRole] = useState(null);
 
-    const [cent, setCent]=useState();
+  const [cent, setCent]=useState();
 
-    useEffect(() => {
-      var inputAccount = document.getElementById("account");
-      var inputPass = document.getElementById("password");
-      // var inputrole= document.getElementById("roleinput");
-      if (id === "") { 
-        inputAccount.classList.remove("correct-input");
-        inputAccount.classList.add("error-input");
-      } else {
-        inputAccount.classList.add("correct-input");
-        inputAccount.classList.remove("error-input");
+  useEffect(() => {
+    var inputAccount = document.getElementById("account");
+    var inputPass = document.getElementById("password");
+    // var inputrole= document.getElementById("roleinput");
+    if (id === "") { 
+      inputAccount.classList.remove("correct-input");
+      inputAccount.classList.add("error-input");
+    } else {
+      inputAccount.classList.add("correct-input");
+      inputAccount.classList.remove("error-input");
+    }
+
+    if (pass === "") { 
+      inputPass.classList.remove("correct-input");
+      inputPass.classList.add("error-input");
+    } else {
+      inputPass.classList.add("correct-input");
+      inputPass.classList.remove("error-input");
+    }
+
+    if(json ===null)
+    {
+      getConsulta();
+    }
+    
+  }, [id, pass]);
+
+  const aprove =()=>{
+    for (const x in json) {
+      // if(json[x]['id_usuario']==id && json[x]['s.password']== pass)
+      console.log(json[x]['id_rol']);
+      console.log(json[x]['id_usuario']);
+      console.log(json[x]['password']);
+      if(json[x]['id_usuario']== id && json[x]['password'] == pass){
+        console.log(json[x]['id_rol']);
+        setRole(json[x]['id_rol']);
+        console.log(role);
       }
+    }
 
-      if (pass === "") { 
-        inputPass.classList.remove("correct-input");
-        inputPass.classList.add("error-input");
-      } else {
-        inputPass.classList.add("correct-input");
-        inputPass.classList.remove("error-input");
-      }
 
-      if(json ===null)
-      {
-        getConsulta();
-      }
-      
-    }, [id, pass]);
 
-    const aprove =()=>{
   
-      json.map((s) => {
-        console.log(s.id_usuario);
-        if(s.id_usuario===id && s.password=== pass){
-          setRole(s.id_rol);
-          setCent(true);
-          console.log("sí paso");
-          
-        }
-      });
-      };
+    // json.map((s) => {
+    //   // console.log(s.id_usuario+"  "+s.password+"  "+s.id_rol);
+    //   console.log(s.id_rol);
+      
+    //   if(s.id_usuario==id && s.password== pass){
+    //     // console.log(s.id_rol) ;
+    //     setRole(5);
+    //     console.log("role"+role+"el de json: "+s.id_rol);
+    //     setCent(true);
+    //     console.log(cent);
+    //     }
+    // });
+  };
     
     const getConsulta = async () => {
       try {
@@ -77,23 +94,25 @@ export default function Login() {
       }
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit =  (event) => {
+    event.preventDefault();
     try {
-      if(json!==null){
-        event.preventDefault();
-        aprove();
+      
+        
+      setRole(aprove);
+      if(json!==null && role!==null){
+        
+        
         console.log(json);
         // name== ? 
         if (pass !=="" && id!=="" ){
           // await getConsulta();
           
-          console.log("esta rolenado  "+role);
-          if(cent){
-            console.log(pass+" sdfsdf  "+id);
+          console.log(role);
+          
             setState({ id: id, role: role });
             // alert(`The id you entered was: ${id} sith la contra: ${pass}`);
-          // navigate("/admin");
-      }
+      
         
           }
           

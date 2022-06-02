@@ -12,6 +12,7 @@ import NotFoundPage from "../NotFoundPage";
 import { useContext } from "react";
 import { Context } from "../Store";
 import CustomForm from "./forms/CustomForm";
+import Botones_Mostrar from "./Botones_Mostrar";
 // form components
 import BajaProf from "./forms/BajaProf";
 import ModificarProf from "./forms/ModificarProf";
@@ -35,7 +36,7 @@ export default function ManageAdmin(){
             {/* <Route path="/login" element={<Login />}/>
             <Route path="/admin_:userId" element={<Header/>}/> */}
             <Route path="login" element={<Login />} />
-            <Route path="/" element={"inicio"} />
+            <Route path="/" element={<Botones_Mostrar />} />
             <Route path="profesores" element={<Profesores />}>
               <Route path="customform" element={ <CustomForm/> }  />
               <Route path="bajaprof" element={<BajaProf />} />

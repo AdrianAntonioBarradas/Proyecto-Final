@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 //prueba
 const initialState = {
-  id: null,
+  id: 123,
   role: null,
   view: true
 };
