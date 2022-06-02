@@ -22,8 +22,9 @@ function Header() {
   };
 
   const setView =()=>{
-    
-    setState({ id: state.id , role: state.role, view: true });
+
+    setState({...state, view: true});
+    // console.log(state);
   };
   return (
     <>
